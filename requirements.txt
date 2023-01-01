@@ -1,0 +1,5 @@
+soundcard
+soundfile
+pylast
+python-dotenv
+shazamio
