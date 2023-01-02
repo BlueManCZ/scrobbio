@@ -5,7 +5,6 @@ witcher3_patches = {
         "process_name": "witcher3",
     },
     "replace": {
-        "Marcin Przybylowicz": "Marcin Przybyłowicz",
         "Blood and Wine (Soundtrack)": "Blood and Wine (Official Soundtrack)",
     },
 }

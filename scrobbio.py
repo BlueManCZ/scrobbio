@@ -14,6 +14,8 @@ while running:
 
     # Recognize audio from a file
     track = recognize_track_from_file("/tmp/sample.wav")
+    # For easier debugging uncomment the following line
+    # print(track.title, track.artist)
 
     # Scrobble track metadata
     if track.title and track.artist:

@@ -19,7 +19,7 @@ if not loopback_input:
 print(f"Using input: {loopback_input.name}\n")
 
 
-def record_audio(samplerate=44100, numframes=200000):
+def record_audio(samplerate=44100, numframes=500000):
     """Record audio from the loopback input at the given samplerate for the given number of frames."""
     with loopback_input.recorder(samplerate=samplerate) as mic:
         data = mic.record(numframes)
