@@ -1,3 +1,6 @@
+from modules.utils import normalize_string
+
+
 class ShazamTrack:
     """Class to represent a track recognized by Shazam API."""
 
@@ -6,11 +9,13 @@ class ShazamTrack:
 
     @property
     def title(self):
-        return self.shazam_data.get("track", {}).get("title")
+        title = self.shazam_data.get("track", {}).get("title")
+        return normalize_string(title) if title else None
 
     @property
     def artist(self):
-        return self.shazam_data.get("track", {}).get("subtitle")
+        artist = self.shazam_data.get("track", {}).get("subtitle")
+        return normalize_string(artist) if artist else None
 
     @property
     def album(self):
@@ -21,7 +26,7 @@ class ShazamTrack:
                 .get("metadata", {})
             ):
                 if metadata.get("title") == "Album":
-                    return metadata.get("text")
+                    return normalize_string(metadata.get("text"))
         return None
 
     def __str__(self):

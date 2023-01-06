@@ -50,3 +50,8 @@ def show_diff(before, after):
         else:
             raise RuntimeError("unexpected opcode")
     return "".join(output)
+
+
+def normalize_string(string):
+    """Use regular whitespaces."""
+    return string.replace("\xa0", " ")
