@@ -3,7 +3,8 @@ default_patches = {
         " - EP",
         " - Single",
     ],
-    "replace": {
+    "partial_replace": {
+        "G’Natt": "G'Natt",
         "Marcin Przybylowicz": "Marcin Przybyłowicz",
     },
 }

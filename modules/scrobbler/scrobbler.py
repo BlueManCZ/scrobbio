@@ -39,15 +39,34 @@ def apply_patches(title, artist, album, album_artist=None):
                     artist = artist.replace(key, value)
                 if album and album == key:
                     album = album.replace(key, value)
+        if "partial_replace" in patch:
+            for key, value in patch["partial_replace"].items():
+                if key in title:
+                    title = title.replace(key, value)
+                if key in artist:
+                    artist = artist.replace(key, value)
+                if album and key in album:
+                    album = album.replace(key, value)
         if "album" in patch:
             for album_name, album_dict in patch["album"].items():
+                if album_name == album:
+                    album_artist = album_dict.get("album_artist", None)
                 if (
                     artist in album_dict.get("artist", "")
                     or artist in album_dict.get("album_artist", "")
-                ) and title in album_dict["tracks"]:
-                    artist = album_dict["artist"]
+                ) and title in album_dict.get("tracks", []):
+                    artist = album_dict.get("artist", artist)
                     album = album_name
-                    album_artist = album_dict.get("album_artist", None)
+                    album_artist = album_dict.get("album_artist", album_artist)
+                if type(album_dict.get("tracks", None)) == dict:
+                    for track_name, track_artist in album_dict.get("tracks").items():
+                        if title in track_name and (
+                            artist in track_artist or track_artist in artist
+                        ):
+                            title = track_name
+                            artist = track_artist
+                            album = album_name
+                            album_artist = album_dict.get("album_artist", album_artist)
 
     return title, artist, album, album_artist
 
