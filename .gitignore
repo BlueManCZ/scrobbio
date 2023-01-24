@@ -1,5 +1,8 @@
 # JetBrains IDE
 .idea
 
+# Python
+__pycache__
+
 # Environment
 .env

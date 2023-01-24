@@ -11,8 +11,11 @@ cyberpunk_2077_patches = {
             "tracks": {
                 "Clip Boss (feat. Johnny Gr4ves & ANAK KONDA)": "Konrad OldMoney",
                 "Go Blaze (feat. Chanarah, Cidro Onetoo & G'Natt)": "Konrad OldMoney",
+                "Kill the Messenger": "Rezodrone",
                 "Never Stop Me": "Den of Degenerates",
+                "To the Fullest": "The Unfit",
                 "Warning Shots (feat. Perry Porter & Cidro Onetoo)": "Konrad OldMoney",
+                "With Her": "Steven Richard Davis",
             },
         },
         "Cyberpunk 2077: Original Score": {
@@ -28,6 +31,7 @@ cyberpunk_2077_patches = {
             "album_artist": "Various Artists",
             "tracks": {
                 "Dead Pilot": "Sebastian Robertson",
+                "Violence": "Le Destroy",
             },
         },
     },
