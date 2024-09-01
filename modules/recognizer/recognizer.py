@@ -7,5 +7,5 @@ shazam = Shazam()
 
 def recognize_track_from_file(filename):
     """Recognize a track from a file using Shazam API."""
-    shazam_data = asyncio.run(shazam.recognize_song(filename))
+    shazam_data = asyncio.run(shazam.recognize(filename))
     return ShazamTrack(shazam_data)
